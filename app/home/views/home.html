@@ -1,1 +1,18 @@
+<div class="container" >
 <h2>Welcome {{user.name}}</h2>
+<button ng-click="toAdd()" >Add Employee</button>
+<select ng-model="order_by" ng-change = "sortChange()">
+    <option value="name">Name</option>
+    <option value="email">Email</option>
+    <option value="gender">Gender</option>
+    <option value="number">Contact Number</option>
+</select>
+<table class="table  table-striped">
+    <tr>
+        <th>Name</th><th>Email</th><th>Gender</th><th>Contact Number</th><th>Action</th>
+    </tr>
+    <tr ng-repeat="data in employees | orderBy: order_by" >
+        <td ng-click='toEdit(data.id)'>{{data.name}}</td><td ng-click='toEdit(data.id)'>{{data.email}}</td><td ng-click='toEdit(data.id)'>{{data.gender}}</td><td ng-click='toEdit(data.id)'>{{data.number}}</td><td><button title="Delete this record" ng-click='delete(data.id)'>Delete</button></td>
+    </tr>
+</table>
+</div>

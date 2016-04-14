@@ -1,0 +1,29 @@
+<style>
+input,select { margin-bottom: 2px; }
+button { margin-top: 20px; }
+.error{color:#d66;margin-bottom: 15px;font-weight:normal; font-size:90%;padding-left:15px;}
+</style>
+<div class="container" style="width:350px;padding-top:50px">
+
+      <form class="form-signin" ng-submit="editorsave()" ng-controller="loginCtrl">
+        <h2 class="form-signin-heading text-center">{{title}}</h2>
+        <label for="name" class="sr-only">Name</label>
+        <input type="text" id="name" ng-model="employee.name" class="form-control" placeholder="Full Name" required autofocus>
+        <label class="error" id="err_gender">{{err_gender_message}}</label>
+        <label for="email" class="sr-only">Email address</label>
+        <input type="email" id="email" ng-model="employee.email" class="form-control" placeholder="Email address" required autofocus>
+        <label class="error" id="err_email">{{err_email_message}}</label>
+        <label for="gender" class="sr-only">Gender</label>
+        <select id="gender" ng-model="employee.gender" class="form-control" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <label class="error" id="err_gender">{{err_gender_message}}</label>
+        <label for="number" class="sr-only">Contact Number</label>
+        <input type="text" id="number" ng-model="employee.number" class="form-control" placeholder="Contact Number" required autofocus>
+        <label class="error" id="err_number">{{err_number_message}}</label>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">{{button_msg}}</button>
+      </form>
+</div> 
